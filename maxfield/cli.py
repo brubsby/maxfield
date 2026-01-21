@@ -1,4 +1,3 @@
-#! /usr/bin/env python
 # -*- coding: utf-8 -*-
 """
 Ingress Maxfield - maxfield executable
@@ -26,14 +25,14 @@ January 2020 - A complete re-write of original Ingress Maxfield.
 """
 
 import argparse
-from maxfield import maxfield
+from . import maxfield
 
-if __name__ == "__main__":
+def main():
     desc = ('Ingress Maxfield: An Ingress Linking and Fielding '
             'Strategy Generator.')
     parser = argparse.ArgumentParser(
         description=desc,
-        prog='maxfield.py',
+        prog='maxfield-plan',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument(
         'filename', type=str,
@@ -90,3 +89,6 @@ if __name__ == "__main__":
 
     args = vars(parser.parse_args())
     maxfield.maxfield(**args)
+
+if __name__ == "__main__":
+    main()

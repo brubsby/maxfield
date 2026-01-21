@@ -1,0 +1,26 @@
+[project]
+name = "maxfield"
+version = "4.0"
+description = "Ingress Maxfield: An Ingress Linking and Fielding Strategy Generator"
+readme = "README.md"
+authors = [
+    { name = "Trey V. Wenger", email = "tvwenger@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "networkx",
+    "scipy",
+    "ortools",
+    "protobuf==3.19.4",
+    "matplotlib",
+    "imageio",
+    "pygifsicle",
+]
+
+[project.scripts]
+maxfield-plan = "maxfield.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
